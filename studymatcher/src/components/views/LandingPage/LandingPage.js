@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Fragment } from "react";
+import Footer from "../../layout/Footer";
+import Header from "../../layout/Header";
 
-function LandingPage() {
+export default function LandingPage() {
   return (
-    <div>
-      LandingPage (홈 화면)
-    </div>
+    <Fragment>
+      <Header></Header>
+      <div>[[[LandingPage (홈 화면)]]]]</div>
+      <br />
+      <Footer />
+    </Fragment>
   );
 }
-
-export default LandingPage;
