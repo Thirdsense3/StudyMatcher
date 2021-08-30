@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HeaderTop() {
   return (
     <div className="header-padding-1 d-none d-lg-block header-top-area">
@@ -29,10 +31,14 @@ export default function HeaderTop() {
               <div className="lang-car-dropdown">
                 <ul>
                   <li>
-                    <button value="login">로그인</button>
+                    <Link to="./login">
+                      <button value="login">로그인</button>
+                    </Link>
                   </li>
                   <li>
-                    <button value="register">회원가입</button>
+                    <Link to="./register">
+                      <button value="register">회원가입</button>
+                    </Link>
                   </li>
                 </ul>
               </div>
