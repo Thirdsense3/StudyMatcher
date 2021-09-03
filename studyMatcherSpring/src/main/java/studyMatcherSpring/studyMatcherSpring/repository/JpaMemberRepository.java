@@ -21,9 +21,9 @@ public class JpaMemberRepository implements MemberRepository{
     }
 
     @Override
-    public List<Member> findByEmail(String email) {
-        return em.createQuery("select m from Member m where email = :email", Member.class)
-                .setParameter("email", email)
+    public List<Member> findByNickname(String nickname) {
+        return em.createQuery("select m from Member m where nickname = :nickname", Member.class)
+                .setParameter("nickname", nickname)
                 .getResultList();
     }
 
@@ -31,5 +31,10 @@ public class JpaMemberRepository implements MemberRepository{
     public List<Member> findAll() {
         return em.createQuery("select m from Member m", Member.class)
                 .getResultList();
+    }
+
+    @Override
+    public Member findById(Long id) {
+        return em.find(Member.class, id);
     }
 }

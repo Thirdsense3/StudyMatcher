@@ -26,15 +26,15 @@ public class MemberService {
 
     public Long login(Member member) {
 
-        List<Member> members = memberRepository.findByEmail(member.getEmail());
+        List<Member> members = memberRepository.findByNickname(member.getNickname());
         if(members.isEmpty()) {
             return 0L;
             //throw new IllegalStateException("wrong email");
         }
         Member findMember = members.get(0);
 
-        log.debug("email={}, password={}", findMember.getEmail(), findMember.getPassword());
-        log.debug("email={}, password={}", member.getEmail(), member.getPassword());
+        log.debug("nickname={}, password={}", findMember.getNickname(), findMember.getPassword());
+        log.debug("nickname={}, password={}", member.getNickname(), member.getPassword());
         if(!member.getPassword().equals(findMember.getPassword())) {
             return 0L;
             //throw new IllegalStateException("wrong password");
@@ -42,13 +42,17 @@ public class MemberService {
         return findMember.getId();
     }
 
-    public Boolean validateDuplicatedEmail(String email) {
+    public Boolean validateDuplicatedNickname(String nickname) {
 
-        List<Member> members = memberRepository.findByEmail(email);
+        List<Member> members = memberRepository.findByNickname(nickname);
         if(members.isEmpty()) {
             return true;
-            //throw new IllegalStateException("wrong email");
+            //throw new IllegalStateException("wrong id");
         }
         return false;
+    }
+
+    public Member getMemberInform(Long id) {
+        return memberRepository.findById(id);
     }
 }

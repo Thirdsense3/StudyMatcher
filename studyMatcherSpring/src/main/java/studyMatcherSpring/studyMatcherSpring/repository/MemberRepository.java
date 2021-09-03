@@ -8,6 +8,7 @@ import java.util.List;
 public interface MemberRepository {
 
     Member save(Member member);
-    List<Member> findByEmail(String email);
+    List<Member> findByNickname(String nickname);
     List<Member> findAll();
+    Member findById(Long id);
 }
