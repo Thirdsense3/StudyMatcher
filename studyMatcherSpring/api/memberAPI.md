@@ -22,7 +22,7 @@ Save a new member's data at DB
   ```json
   {
       "name" : "",
-      "email" : "",
+      "nickname" : "",
       "password" : "",
       "location" : {"city" : "", "gu" : ""}
   }
@@ -63,7 +63,7 @@ Log in
 
   ```json
   {
-      "name" : "",
+      "nickname" : "",
       "password" : ""
   }
    ```
@@ -71,7 +71,7 @@ Log in
 * **Success Response**
   * **Code:** 200 <br />
     **Content:** `{"id": Long, "error" : null}` <br />
-    **Content:** `{"id": null, "error" : wrong email or password}`
+    **Content:** `{"id": null, "error" : "wrong email or password"}`
 
 
 * **Error Response**
@@ -87,7 +87,7 @@ Check duplicated email
 
 * **URL**
 
-  >/members/duplicate-check/:email
+  >/members/duplicate-check/:nickname
 
 
 * **Method**
@@ -98,7 +98,7 @@ Check duplicated email
 * **URL Params**
 
   > Required<br />
-  >  * email=[String]
+  >  * nickname=[String]
 
 * **Data Params**
   
