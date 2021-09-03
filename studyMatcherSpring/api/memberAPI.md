@@ -71,19 +71,19 @@ Log in
 * **Success Response**
   * **Code:** 200 <br />
     **Content:** `{"id": Long, "error" : null}` <br />
-    **Content:** `{"id": null, "error" : "wrong email or password"}`
+    **Content:** `{"id": null, "error" : "wrong id or password"}`
 
 
 * **Error Response**
   * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ "error" : "wrong email or password"}`
+    **Content:** `{ "error" : "wrong id or password"}`
 
 
 <br>
 
 **Duplicate check**
 ----
-Check duplicated email
+Check duplicated id
 
 * **URL**
 
@@ -106,8 +106,52 @@ Check duplicated email
 
 * **Success Response**
   * **Code:** 200 <br />
-    **Content:** `"possible email"` <br />
-    **Content:** `"duplicated email"`
+    **Content:** `"possible id"` <br />
+    **Content:** `"duplicated id"`
+
+
+* **Error Response**
+  * **Code:** 404 NOT FOUND <br />
+
+
+<br>
+
+**Find Member**
+----
+Get specified Member's information 
+
+* **URL**
+
+  >/members/{id}
+
+
+* **Method**
+
+  > GET
+
+
+* **URL Params**
+
+  > Required<br />
+  >  * id=[Long]
+
+* **Data Params**
+
+  > None
+
+* **Success Response**
+  * **Code:** 200 <br />
+    **Content:**
+    ```json
+    {
+      "id" : Long,
+      "name" : String,
+      "nickname" : String,
+      "location" : {"city": String, "gu": String},
+      "level" : String,
+      "testDate" :  date
+    }
+    ```
 
 
 * **Error Response**
