@@ -4,4 +4,5 @@
 <br>
 
 DB Table
-![StudyMatcher DB table](https://user-images.githubusercontent.com/14210444/132049751-ec875ed9-33e4-456e-b4fd-c42209557704.png)
+![StudyMatcher DB 설계도](https://user-images.githubusercontent.com/14210444/132085592-a6b218d5-455c-443f-93be-8d7dd0e0e6c3.png)
+
