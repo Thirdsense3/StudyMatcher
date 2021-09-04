@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../../_actions/user_action';
 
 export default function HeaderTop() {
+  const dispatch = useDispatch();
+
+  const onClickHandler = () => {
+    dispatch(logoutUser());
+    alert('로그아웃 되셨습니다.');
+  }
+
   return (
     <div className="header-padding-1 d-none d-lg-block header-top-area">
       <div className="container-fluid">
@@ -40,8 +49,18 @@ export default function HeaderTop() {
                       <button value="register">회원가입</button>
                     </Link>
                   </li>
+                  <li>
+                    <button value="logout" onClick={onClickHandler}>로그아웃</button>
+                  </li>
                 </ul>
               </div>
+            </div>
+            <div className="same-language-currency language-style">
+              <span>
+                <Link to="./">
+                  홈
+                </Link>
+              </span>
             </div>
           </div>
         </div>
