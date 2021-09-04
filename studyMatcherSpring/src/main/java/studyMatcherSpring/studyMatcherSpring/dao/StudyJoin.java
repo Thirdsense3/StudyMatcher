@@ -9,9 +9,6 @@ public class StudyJoin {
     @Column(name = "study_join_id")
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    private Status status;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;

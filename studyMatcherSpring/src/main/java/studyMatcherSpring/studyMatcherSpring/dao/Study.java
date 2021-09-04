@@ -26,6 +26,9 @@ public class Study {
     @Enumerated(EnumType.STRING)
     private Type type;
 
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
     @OneToMany(mappedBy = "study")
     private List<StudyJoin> studyJoins = new ArrayList<>();
 
@@ -35,4 +38,8 @@ public class Study {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "study_page_id")
     private StudyPage studyPage;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "leader_id")
+    private Member leader;
 }
