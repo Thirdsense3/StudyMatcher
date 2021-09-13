@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import studyMatcherSpring.studyMatcherSpring.dao.Member;
 import studyMatcherSpring.studyMatcherSpring.dto.ResponseMember;
 import studyMatcherSpring.studyMatcherSpring.service.MemberService;
-
-import java.time.LocalDate;
+import studyMatcherSpring.studyMatcherSpring.service.MemberServiceV1;
 
 // 임시 조치
 @CrossOrigin(origins = "http://localhost:3000")

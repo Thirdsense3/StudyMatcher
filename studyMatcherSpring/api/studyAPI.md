@@ -1,10 +1,60 @@
-**Find Member**
+**Study List**
 ----
-Get specified Member's information
+Get study list
 
 * **URL**
 
-  >/members/{id}
+  >/study
+
+
+* **Method**
+
+  > GET
+
+
+* **URL Params**
+
+  > Optional<br />
+  >  * name=[String]
+  >  * category=[Long]
+  >  * leader=[Long]
+
+* **Data Params**
+
+  > None
+
+* **Success Response**
+    * **Code:** 200 <br />
+      **Content:**
+      ```json
+      {
+        "study" : [
+        {
+          "id" : Long,
+          "name" : String,
+          "level" : String,
+          "location" : {"city": String, "gu": String},
+          "type" : String,
+          "status" :  String,
+          "leader_id" : Long
+        }, ...]
+      }
+      ```
+
+
+* **Error Response**
+    * **Code:** 404 NOT FOUND <br />
+
+
+<br>
+
+**Get Specific Study**
+----
+Get specific Study information
+
+* **URL**
+
+  >/study/:id
 
 
 * **Method**
@@ -28,10 +78,12 @@ Get specified Member's information
       {
         "id" : Long,
         "name" : String,
-        "nickname" : String,
-        "location" : {"city": String, "gu": String},
         "level" : String,
-        "testDate" :  date
+        "location" : {"city": String, "gu": String},
+        "type" : String,
+        "status" :  String,
+        "leader_id" : Long,
+        "text" : String
       }
       ```
 

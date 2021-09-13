@@ -17,6 +17,8 @@ public class Study {
 
     private String name;
 
+    private String text;
+
     @Enumerated(EnumType.STRING)
     private Level level;
 

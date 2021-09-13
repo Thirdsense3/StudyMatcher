@@ -122,7 +122,7 @@ Get specified Member's information
 
 * **URL**
 
-  >/members/{id}
+  >/members/:id
 
 
 * **Method**

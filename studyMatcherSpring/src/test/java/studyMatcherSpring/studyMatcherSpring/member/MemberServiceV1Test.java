@@ -2,24 +2,21 @@ package studyMatcherSpring.studyMatcherSpring.member;
 
 import static org.assertj.core.api.Assertions.*;
 
-import org.aspectj.lang.annotation.After;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import studyMatcherSpring.studyMatcherSpring.dao.Level;
 import studyMatcherSpring.studyMatcherSpring.dao.Location;
 import studyMatcherSpring.studyMatcherSpring.dao.Member;
-import studyMatcherSpring.studyMatcherSpring.service.MemberService;
+import studyMatcherSpring.studyMatcherSpring.service.MemberServiceV1;
 
 @SpringBootTest
 @Transactional
-class MemberServiceTest {
+class MemberServiceV1Test {
 
     @Autowired
-    MemberService memberService;
+    MemberServiceV1 memberService;
 
     @Test
     public void save() {
