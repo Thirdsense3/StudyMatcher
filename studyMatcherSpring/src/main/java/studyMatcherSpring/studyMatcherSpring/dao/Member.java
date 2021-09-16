@@ -33,7 +33,7 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<TimeTable> schedules = new ArrayList<>();
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<StudyJoin> myStudies = new ArrayList<>();
 
     @OneToMany(mappedBy = "member")
@@ -41,4 +41,13 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<ChatMessage> messages = new ArrayList<>();
+
+    @OneToMany(mappedBy = "leader")
+    private List<Study> leadingStudy = new ArrayList<>();
+
+    //--연관관계 편의 메서드--//
+    public void addStudyJoin(StudyJoin studyJoin) {
+        this.getMyStudies().add(studyJoin);
+        studyJoin.setMember(this);
+    }
 }

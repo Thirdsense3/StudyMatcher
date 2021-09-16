@@ -1,5 +1,6 @@
 package studyMatcherSpring.studyMatcherSpring.controller;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,12 +12,12 @@ import studyMatcherSpring.studyMatcherSpring.service.MemberServiceV1;
 // 임시 조치
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/members")
 @Slf4j
 public class MemberController {
 
-    @Autowired
-    private MemberService memberService;
+    private final MemberService memberService;
 
     @PostMapping("/join")
     public Member join(@RequestBody  Member member) {
