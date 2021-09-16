@@ -8,5 +8,5 @@ public interface StudyRepository {
 
     Study findOne(Long id);
     List<Study> findAll(StudySearch studySearch);
-    Study save(Study study);
+    void save(Study study);
 }

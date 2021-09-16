@@ -4,10 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 import studyMatcherSpring.studyMatcherSpring.dao.Category;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter @Setter
 public class StudySearch {
 
-    private Long leader_id;
-    private Category category;
+    private String leader;
+    private List<Long> categories = new ArrayList<>();
     private String studyName;
+
+    public void addCategories(Long id) {
+        this.getCategories().add(id);
+    }
 }

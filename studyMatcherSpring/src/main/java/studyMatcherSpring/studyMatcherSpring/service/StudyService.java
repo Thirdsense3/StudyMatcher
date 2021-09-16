@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface StudyService {
 
-    Study enroll(Study study);
+    Long enroll(Study study, String text, Long leader_id);
     List<Study> findAllStudy(StudySearch studySearch);
     Study getStudyInform(Long id);
 }
