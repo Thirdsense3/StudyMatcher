@@ -22,6 +22,7 @@ public class StudyRepositoryV1 implements StudyRepository{
     @Override
     public List<Study> findAll(StudySearch studySearch) {
         // QueryDSL로 수정
+        // 정규표현식으로 변경
         String jpql = "select s From Study s join s.leader m";
         boolean isFirstCondition = true;
 

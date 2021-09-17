@@ -25,7 +25,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/study")
-public class ServiceController {
+public class StudyController {
 
     private final StudyService studyService;
     //private final CategoryRepository categoryRepository;
@@ -129,7 +129,7 @@ public class ServiceController {
 
         private Level level;
         private Type type;
-        private ArrayList<Long> categories = new ArrayList<>();
+        private ArrayList<Long> category = new ArrayList<>();
     }
 
     @Data
