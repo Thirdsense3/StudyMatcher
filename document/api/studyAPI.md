@@ -17,7 +17,7 @@ Get study list
   > Optional<br />
   >  * name=[String]
   >  * category=[Long]
-  >  * leader=[Long]
+  >  * leader=[String]
 
 * **Data Params**
 
