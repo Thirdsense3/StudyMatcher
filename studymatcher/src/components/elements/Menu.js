@@ -5,7 +5,7 @@ export default function Menu() {
   const [menuData, setMenuData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3005/menu")
+    fetch("http://localhost:3000/menu")
       .then((res) => {
         return res.json();
       })

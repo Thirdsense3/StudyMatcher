@@ -5,7 +5,7 @@ export default function SideMenu() {
   const [menuData, setMenuData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3005/sidemenu")
+    fetch("http://localhost:3000/sidemenu")
       .then((res) => {
         return res.json();
       })
