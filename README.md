@@ -1,7 +1,7 @@
 # StudyMatcher
 개발자 스터디 매칭 사이트
 
-Back-end Repo : [StudyMatcher_BE](https://github.com/Thirdsense3/StudyMatcher_BE)
+Back Repo : [StudyMatcher_BE](https://github.com/Thirdsense3/StudyMatcher_BE)
 
 <br>
 <br>
