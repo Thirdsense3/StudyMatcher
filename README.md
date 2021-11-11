@@ -2,6 +2,7 @@
 개발자 스터디 매칭 사이트
 
 Back Repo : [StudyMatcher_BE](https://github.com/Thirdsense3/StudyMatcher_BE)
+참고 Google docs : [Google 문서](https://docs.google.com/document/d/1X1P-m9sL4iWKePTRhvlW2BScIvwCzL2ydbH7vDpWv-Q/edit)
 
 <br>
 <br>
