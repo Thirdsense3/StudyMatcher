@@ -57,20 +57,21 @@ function RegisterPage(props) {
 
     const res1 = await duplicateCheck(Nickname);
 
-    if (res1 !== 'possible id') {
-      return alert('이미 등록된 ID 입니다.');
+    if (res1 === 'possible id') {
+      dispatch(registerUser(Name, Nickname, Password, City, Gu)
+      ).then(response => {
+        if (response.payload.error === null || response.payload.error === undefined) {
+          alert('회원가입이 완료되었습니다.');
+          props.history.push('/login');
+        } else {
+          console.log(response.payload);
+          alert('회원가입에 실패하셨습니다. 새로고침 후 다시 시도해주세요.');
+        }
+      });
+    } else {
+      console.log(res1);
+      alert(res1);
     }
-
-    dispatch(registerUser(Name, Nickname, Password, City, Gu)
-    ).then(response => {
-      if (response.payload.error === null || response.payload.error === undefined) {
-        alert('회원가입이 완료되었습니다.');
-        props.history.push('/login');
-      } else {
-        console.log(response.payload);
-        alert('회원가입에 실패하셨습니다. 새로고침 후 다시 시도해주세요.');
-      }
-    });
   }
 
   return (
