@@ -62,6 +62,13 @@ export default function HeaderTop() {
                 </Link>
               </span>
             </div>
+            <div className="same-language-currency language-style">
+              <span>
+                <Link to="./Search">
+                  검색
+                </Link>
+              </span>
+            </div>
           </div>
         </div>
       </div>

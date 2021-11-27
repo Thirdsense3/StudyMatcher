@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { registerUser } from '../../../_actions/user_action';
+import { apiUrl, registerUser } from '../../../_actions/user_action';
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 
@@ -117,7 +117,7 @@ export async function duplicateCheck(Nickname) {
   //   console.log(error);
   // });
   try {
-    const response = await axios.get('/members/duplicate-check/' + Nickname);
+    const response = await axios.get(apiUrl + '/members/duplicate-check/' + Nickname);
     console.log(response.data);
     return response.data;
   } catch (error) {

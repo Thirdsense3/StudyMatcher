@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { LOGIN_USER, REGISTER_USER } from './types';
+import { LOGIN_USER, REGISTER_USER, SEARCH_STUDY } from './types';
+
+export const apiUrl = 'http://localhost:8080';
 
 export function loginUser(Nickname, Password) {
-  const request = axios.post('/members/login', {
+  const request = axios.post(apiUrl + '/members/login', {
     nickname: Nickname,
     password: Password
   }).then(response => response.data);
@@ -21,7 +23,7 @@ export function logoutUser() {
 }
 
 export function registerUser(Name, Nickname, Password, City, Gu) {
-  const request = axios.post('/members/join', {
+  const request = axios.post(apiUrl + '/members/join', {
     name: Name,
     nickname: Nickname,
     password: Password,
@@ -30,6 +32,38 @@ export function registerUser(Name, Nickname, Password, City, Gu) {
 
   return {
     type: REGISTER_USER,
+    payload: request
+  }
+}
+
+export function searchStudy(Name, Category, Leader) {
+  var url = apiUrl + '/study';
+  if (Name && Name.length > 0) {
+    url += '?name=' + Name;
+  }
+
+  if (Category && Category.length > 0) {
+    if (url.length > 6) {
+      url += '&category=';
+    } else {
+      url += '?category=';
+    }
+    url += Category;
+  }
+
+  if (Leader && Leader.length > 0) {
+    if (url.length > 6) {
+      url += '&leader=';
+    } else {
+      url += '?leader=';
+    }
+    url += Leader;
+  }
+
+  const request = axios.get(url).then(response => response.data);
+
+  return {
+    type: SEARCH_STUDY,
     payload: request
   }
 }
