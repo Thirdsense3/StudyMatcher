@@ -25,7 +25,9 @@ export default function HeaderTop() {
                     <button value="lvTest">레벨테스트</button>
                   </li>
                   <li>
-                    <button value="stCreate">스터디 생성</button>
+                    <Link to="./createstudy">
+                      <button value="createstudy">스터디 생성</button>
+                    </Link>
                   </li>
                   <li>
                     <button value="stList">스터디 목록</button>

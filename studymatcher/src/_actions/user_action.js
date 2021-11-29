@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOGIN_USER, REGISTER_USER, SEARCH_STUDY } from './types';
+import { LOGIN_USER, REGISTER_USER, SEARCH_STUDY, CREATE_STUDY } from './types';
 
 export const apiUrl = 'http://localhost:8080';
 
@@ -64,6 +64,21 @@ export function searchStudy(Name, Category, Leader) {
 
   return {
     type: SEARCH_STUDY,
+    payload: request
+  }
+}
+
+export function createStudyPage(StudyName, Text, LeaderId, Level, Type) {
+  const request = axios.post(apiUrl + '/members/createStudyPage', {
+    name: StudyName,
+    text: Text,
+    leader_id: LeaderId,
+    level: Level,
+    type: Type
+  }).then(response => response.data);
+
+  return {
+    type: CREATE_STUDY,
     payload: request
   }
 }

@@ -5,6 +5,7 @@ import LandingPage from "./components/views/LandingPage/LandingPage";
 import LoginPage from "./components/views/LoginPage/LoginPage";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import SearchPage from "./components/views/SearchPage/SearchPage";
+import CreateStudyPage from "./components/views/CreateStudyPage/CreateStudyPage";
 
 import "./assets/css/mystyle.css";
 import "./assets/css/style.css";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/search" component={SearchPage} />
+          <Route path="/createstudy" component={CreateStudyPage} />
         </Switch>
       </div>
     </Router>
