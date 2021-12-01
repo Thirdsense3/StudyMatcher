@@ -6,25 +6,39 @@ import Header from "../../layout/Header";
 
 function SearchPage() {
   const dispatch = useDispatch();
-  const [SearchText, setSearchText] = useState('');
+  const [SearchName, setSearchName] = useState('');
+  const [SearchCategory, setSearchCategory] = useState('');
+  const [SearchLeader, setSearchLeader] = useState('');
 
-  const onSearchTextHandler = (event) => {
-    setSearchText(event.currentTarget.value);
+  const categoryList = ['-', 'ReactJS', 'Spring', 'Android', 'iOS'];
+
+  const onSearchNameHandler = (event) => {
+    setSearchName(event.currentTarget.value);
+  };
+
+  const onSearchCategoryHandler = (event) => {
+    setSearchCategory(event.currentTarget.value);
+  };
+
+  const onSearchLeaderHandler = (event) => {
+    setSearchLeader(event.currentTarget.value);
   };
 
   const onSubmitHandler = (event) => {
     event.preventDefault(); // 버튼 클릭마다 페이지 refresh 방지.
 
-    console.log('SearchText:', SearchText);
+    console.log('SearchName:', SearchName);
+    console.log('SearchCategory:', SearchCategory);
+    console.log('SearchLeader:', SearchLeader);
 
-    dispatch(searchStudy(SearchText, '', '')
+    dispatch(searchStudy(SearchName, SearchCategory, SearchLeader)
     ).then(response => {
-      if (response.payload.error === null) {
-        // props.history.push('/');
-        alert(response.payload);
-      } else {
-        alert(response.payload.error);
-      }
+      console.log('searchStudyRes:', response);
+      // if (response.payload.error === null) {
+      //   alert(response.payload);
+      // } else {
+      //   alert(response.payload.error);
+      // }
     });
   };
 
@@ -35,7 +49,28 @@ function SearchPage() {
           <table>
             <tr>
               <td>
-                <input type='text' value={SearchText} onChange={onSearchTextHandler} />
+                Name
+              </td>
+              <td>
+                <input type='text' value={SearchName} onChange={onSearchNameHandler} />
+              </td>
+              <td>
+                Category
+              </td>
+              <td>
+                <select value={SearchCategory} onChange={onSearchCategoryHandler}>
+                  {categoryList.map((item, index) => (
+                    <option value={index} key={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </td>
+              <td>
+                Leader
+              </td>
+              <td>
+                <input type='text' value={SearchLeader} onChange={onSearchLeaderHandler} />
               </td>
               <td>
                 <form onSubmit={onSubmitHandler}>

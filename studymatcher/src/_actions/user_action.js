@@ -38,21 +38,24 @@ export function registerUser(Name, Nickname, Password, City, Gu) {
 
 export function searchStudy(Name, Category, Leader) {
   var url = apiUrl + '/study';
+  var check = false;
   if (Name && Name.length > 0) {
     url += '?name=' + Name;
+    check = true;
   }
 
   if (Category && Category.length > 0) {
-    if (url.length > 6) {
+    if (check) {
       url += '&category=';
     } else {
       url += '?category=';
     }
     url += Category;
+    check = true;
   }
 
   if (Leader && Leader.length > 0) {
-    if (url.length > 6) {
+    if (check) {
       url += '&leader=';
     } else {
       url += '?leader=';
