@@ -26,7 +26,7 @@ function CreateStudyPage(props) {
 
   const LevelSelect = (event) => {
     return(
-      <select onChange={onLevelHandler}>
+      <select value={Level} onChange={onLevelHandler}>
         <option key='Bronze' value='Bronze'>Bronze</option>
         <option key='Silver' value='Silver'>Silver</option>
         <option key='Gold' value='Gold'>Gold</option>
@@ -37,7 +37,13 @@ function CreateStudyPage(props) {
   }
 
   const onTypeHandler = (event) => {
-    setType(event.currentTarget.value);
+    let result = '';
+    if(event.target.checked)  {
+      result = 'UNTACT';
+    }else {
+      result = 'CONTACT';
+    }
+    setType(result);
   };
 
   const onSubmitHandler = async (event) => {
@@ -50,10 +56,6 @@ function CreateStudyPage(props) {
 
     if (!StudyName || !Text) {
       return alert('스터디명 혹은 스터디 소개 부분이 공란입니다.');
-    }
-
-    if (!Level || !Level) {
-        Level = 'Bronze';
     }
 
     dispatch(createStudyPage(StudyName, Text, '1',Level, Type)
