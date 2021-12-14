@@ -72,7 +72,7 @@ export function searchStudy(Name, Category, Leader) {
 }
 
 export function createStudyPage(StudyName, Text, LeaderId, Level, Type) {
-  const request = axios.post(apiUrl + '/members/createStudyPage', {
+  const request = axios.post(apiUrl + '/createstudy', {
     name: StudyName,
     text: Text,
     leader_id: LeaderId,

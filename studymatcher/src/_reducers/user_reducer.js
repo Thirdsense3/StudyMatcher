@@ -1,7 +1,8 @@
 import {
   LOGIN_USER,
   REGISTER_USER,
-  SEARCH_STUDY
+  SEARCH_STUDY,
+  CREATE_STUDY
 } from '../_actions/types';
 
 export default (state = {}, action) => {
@@ -12,6 +13,8 @@ export default (state = {}, action) => {
       return { ...state, register: action.payload }
     case SEARCH_STUDY:
       return { ...state, payload: action.payload }
+    case CREATE_STUDY:
+      return { ...state, createstudy: action.payload }
     default:
       return state;
   }
