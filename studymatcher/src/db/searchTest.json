@@ -1,0 +1,35 @@
+{
+  "count" : 3,
+  "data" : [
+    {
+      "id" : 1,
+      "name" : "name1",
+      "level" : "level1",
+      "location" : {"city": "city1", "gu": "gu1"},
+      "type" : "type1",
+      "status" :  "status1",
+      "leader" : "leader1",
+      "category" : ["Android"]
+    },
+    {
+      "id" : 2,
+      "name" : "name2",
+      "level" : "level2",
+      "location" : {"city": "city2", "gu": "gu2"},
+      "type" : "type2",
+      "status" :  "status2",
+      "leader" : "leader2",
+      "category" : ["Spring"]
+    },
+    {
+      "id" : 3,
+      "name" : "name3",
+      "level" : "level3",
+      "location" : {"city": "city3", "gu": "gu3"},
+      "type" : "type3",
+      "status" :  "status3",
+      "leader" : "leader3",
+      "category" : ["Spring", "ReactJS"]
+    }
+  ]
+}
