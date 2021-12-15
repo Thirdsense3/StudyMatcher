@@ -157,3 +157,48 @@ Enroll new Study
     * **Code:** 404 NOT FOUND
     * **Code:** 400 Bad Request
       * empty required data<br />
+
+
+<br>
+
+**Chaging Study Status**
+----
+change study status
+
+* **URL**
+
+  >/{id}/status
+
+
+* **Method**
+
+  > POST
+
+
+* **URL Params**
+
+  > None
+
+* **Data Params**
+    * **Context-Type:** application/json
+  > Required
+  >  * studyId
+   ```json
+  {
+      "studyId" : String,
+  }
+   ```
+
+* **Success Response**
+    * **Code:** 200 <br />
+      **Content:**
+      ```json
+      {
+        "result" : Boolean
+      }
+      ```
+
+
+* **Error Response**
+    * Not Yet.
+    <br />
