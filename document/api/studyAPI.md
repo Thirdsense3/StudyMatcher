@@ -161,7 +161,7 @@ Enroll new Study
 
 <br>
 
-**Chaging Study Status**
+**Changing Study Status**
 ----
 change study status
 
