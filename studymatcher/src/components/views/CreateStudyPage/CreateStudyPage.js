@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createStudyPage } from '../../../_actions/user_action';
+import { createStudyPage } from '../../../_actions/study_action';
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 

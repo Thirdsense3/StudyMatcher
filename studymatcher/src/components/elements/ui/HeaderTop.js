@@ -5,7 +5,7 @@ import { logoutUser } from '../../../_actions/user_action';
 export default function HeaderTop() {
   const dispatch = useDispatch();
 
-  const onClickHandler = () => {
+  const onClickLogoutHandler = () => {
     dispatch(logoutUser());
     alert('로그아웃 되셨습니다.');
   }
@@ -52,7 +52,7 @@ export default function HeaderTop() {
                     </Link>
                   </li>
                   <li>
-                    <button value="logout" onClick={onClickHandler}>로그아웃</button>
+                    <button value="logout" onClick={onClickLogoutHandler}>로그아웃</button>
                   </li>
                 </ul>
               </div>

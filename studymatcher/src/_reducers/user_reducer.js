@@ -1,20 +1,18 @@
 import {
   LOGIN_USER,
-  REGISTER_USER,
-  SEARCH_STUDY,
-  CREATE_STUDY
+  LOGOUT_USER,
+  REGISTER_USER
 } from '../_actions/types';
 
 export default (state = {}, action) => {
   switch (action.type) {
     case LOGIN_USER:
-      return { ...state, loginSuccess: action.payload }
+      console.log("action.payload:", action.payload);
+      return { ...state, isLogged: true, loginState: action.payload }
+    case LOGOUT_USER:
+      return { ...state, isLogged: false, loginState: null }
     case REGISTER_USER:
-      return { ...state, register: action.payload }
-    case SEARCH_STUDY:
-      return { ...state, payload: action.payload }
-    case CREATE_STUDY:
-      return { ...state, createstudy: action.payload }
+      return { ...state, isLogged: false, register: action.payload }
     default:
       return state;
   }
