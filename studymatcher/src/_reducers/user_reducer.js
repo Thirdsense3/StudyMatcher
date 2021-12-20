@@ -8,12 +8,12 @@ export default (state = {}, action) => {
   switch (action.type) {
     case LOGIN_USER:
       console.log("action.payload:", action.payload);
-      return { ...state, isLogged: true, loginState: action.payload }
+      return { ...state, logged: true, loggedInfo: action.payload }
     case LOGOUT_USER:
-      return { ...state, isLogged: false, loginState: null }
+      return { ...state, logged: false, loggedInfo: null }
     case REGISTER_USER:
-      return { ...state, isLogged: false, register: action.payload }
+      return { ...state, logged: false, loggedInfo: null, register: action.payload }
     default:
-      return state;
+      return { ...state, logged: false, loggedInfo: null }
   }
 }
